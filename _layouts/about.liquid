@@ -1,20 +1,76 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
+<style>
+  .container.mt-5 {
+    margin-top: 0 !important;
+    padding-top: 2.5rem !important;
+  }
+  .profile img,
+  .profile figure img,
+  .profile figure picture img {
+    border: 2px solid #999 !important;
+    max-width: 190px !important;
+    width: 190px !important;
+    height: auto !important;
+  }
+  .profile.float-left {
+    margin-right: 0.5rem !important;
+    width: 190px !important;
+    max-width: 190px !important;
+  }
+  @media (min-width: 576px) {
+    .profile.float-left {
+      width: 190px !important;
+      max-width: 190px !important;
+    }
+  }
+  .clearfix {
+    margin-left: 0 !important;
+    padding-left: 210px !important;
+    margin-top: 0 !important;
+  }
+  article .profile + .clearfix {
+    padding-left: 210px !important;
+  }
+  .profile-links {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    clear: both;
+  }
+  .profile-links a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+    margin: 0 0.3rem;
+  }
+  .profile-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-links .separator {
+    color: #666;
+    margin: 0 0.2rem;
+  }
+  .clearfix strong {
+    color: var(--global-theme-color);
+    font-weight: 500;
+  }
+</style>
+<div class="post" style="margin-top: 0; padding-top: 0;">
+  <header class="post-header" style="text-align: left; margin-top: 0; padding-top: 0.5rem;">
+    <h1 class="post-title" style="margin-top: 0; color: #666;">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <span class="font-weight-bold" style="color: #666;">{{ site.first_name }}</span> {{ site.middle_name }}
+        <span style="font-weight: 100;">{{ site.last_name }}</span>
       {% else %}
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    <p class="desc" style="font-size: 0.9em; margin-top: 0.1em; margin-bottom: 0; color: #666;">{{ page.subtitle }}</p>
   </header>
 
-  <article>
+  <article style="margin-top: 2rem;">
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
@@ -40,6 +96,25 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Profile Links Bar -->
+    <div class="profile-links">
+      {% if site.data.socials.scholar_userid %}
+        <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a>{% if site.data.socials.github_username or site.data.socials.x_username or site.data.socials.linkedin_username or site.data.socials.email %}<span class="separator"> | </span>{% endif %}
+      {% endif %}
+      {% if site.data.socials.github_username %}
+        <a href="https://github.com/{{ site.data.socials.github_username }}" target="_blank">Github</a>{% if site.data.socials.x_username or site.data.socials.linkedin_username or site.data.socials.email %}<span class="separator"> | </span>{% endif %}
+      {% endif %}
+      {% if site.data.socials.x_username %}
+        <a href="https://twitter.com/{{ site.data.socials.x_username }}" target="_blank">Twitter</a>{% if site.data.socials.linkedin_username or site.data.socials.email %}<span class="separator"> | </span>{% endif %}
+      {% endif %}
+      {% if site.data.socials.linkedin_username %}
+        <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" target="_blank">LinkedIn</a>{% if site.data.socials.email %}<span class="separator"> | </span>{% endif %}
+      {% endif %}
+      {% if site.data.socials.email %}
+        <a href="mailto:{{ site.data.socials.email }}">Email</a>
+      {% endif %}
+    </div>
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
@@ -59,7 +134,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

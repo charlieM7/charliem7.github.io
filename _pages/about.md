@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: # Add your affiliations, address, and contact information here
+subtitle: M.Sc. Computer Science, AI and Robotics | McGill University
 
 profile:
   align: left
-  image: prof_pic.jpg
+  image: charlie3.jpeg
   image_circular: false # crops the image to make it circular
   more_info: 
 
@@ -14,19 +14,21 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+<!-- 
+# Charlotte Morissette -->
 
-# Charlotte Morissette
+I am a master’s student in Computer Science at **McGill University**, advised by **Professor Gregory Dudek**. My research is primarily in robotics, more specifically in modality fusion, tactile sensing, foundation model, reinforcement learning, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
 
-Welcome! I'm Charlotte Morissette. 
+If our interests align, please feel free to reach out—always happy to discuss potential research or collaboration opportunities. I am currently looking for PhD positions, research internships, or roles starting in Fall 2026.
 
 <!-- Add your biography here. You can include:
 - Your research interests
