@@ -28,7 +28,7 @@ latest_posts:
 
 I am a master’s student in Computer Science at **McGill University**, advised by **Professor Gregory Dudek**. My research is primarily in robotics, more specifically in modality fusion, tactile sensing, foundation model, reinforcement learning, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
 
-If our interests align, please feel free to reach out—always happy to discuss potential research or collaboration opportunities. I am currently looking for PhD positions, research internships, or roles starting in Fall 2026.
+If our interests align, please feel free to reach out — I am always happy to discuss potential research or collaboration opportunities. I am currently looking for PhD positions, research internships, or roles starting in Fall 2026.
 
 <!-- Add your biography here. You can include:
 - Your research interests

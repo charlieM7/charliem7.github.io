@@ -1,0 +1,108 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post project-detail">
+  <header class="post-header project-header">
+    <h1 class="post-title project-title">{{ page.title }}</h1>
+  </header>
+
+  <article class="project-content">
+    <!-- Metadata Section -->
+    <div class="project-metadata">
+      <div class="metadata-header-row">
+        <div class="metadata-left-section">
+          <div class="project-links-metadata">
+            {% if page.paper %}
+              <a href="{{ page.paper }}" class="project-link-btn-metadata" target="_blank">
+                <i class="fa-solid fa-file-pdf"></i> Paper
+              </a>
+            {% elsif page.redirect %}
+              <a href="{{ page.redirect }}" class="project-link-btn-metadata" target="_blank">
+                <i class="fa-solid fa-file-pdf"></i> Paper
+              </a>
+            {% endif %}
+            {% if page.github %}
+              <a href="{{ page.github }}" class="project-link-btn-metadata code-btn" target="_blank">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+            {% endif %}
+            {% if page.website %}
+              <a href="{{ page.website }}" class="project-link-btn-metadata website-btn" target="_blank">
+                <i class="fa-solid fa-globe"></i> Website
+              </a>
+            {% endif %}
+          </div>
+
+          {% if page.keywords %}
+            <div class="metadata-item keywords-item">
+              <i class="fa-solid fa-tag" style="color: var(--global-theme-color);"></i>
+              <span>Keywords:</span>
+              <div class="keywords-tags">
+                {% assign keywords_array = page.keywords | split: ',' %}
+                {% for keyword in keywords_array %}
+                  <span class="keyword-tag">{{ keyword | strip }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if page.date %}
+          <div class="metadata-item date-item">
+            <span>{{ page.date | date: "%Y" }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Project Image -->
+    {% if page.img %}
+      <div class="project-hero-image">
+        {% assign img_path = page.img | strip %}
+        {% unless img_path contains '://' %}
+          {% assign first_char = img_path | slice: 0, 1 %}
+          {% if first_char == '/' %}
+            {% comment %} Already starts with /, use as is {% endcomment %}
+          {% elsif img_path contains 'assets/img/' %}
+            {% comment %} Contains assets/img/, just prepend / {% endcomment %}
+            {% assign img_path = '/' | append: img_path %}
+          {% else %}
+            {% comment %} Relative path or just filename, prepend /assets/img/ {% endcomment %}
+            {% assign img_path = '/assets/img/' | append: img_path %}
+          {% endif %}
+        {% endunless %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=img_path
+          class="img-fluid"
+          alt=page.title
+        %}
+      </div>
+    {% endif %}
+
+    <!-- Abstract Section -->
+    <div class="project-abstract">
+      <h2 class="abstract-title">Abstract</h2>
+      {% if page.abstract_subtitle %}
+        <p class="abstract-subtitle">{{ page.abstract_subtitle }}</p>
+      {% endif %}
+      {% if page.description and page.description != "" %}
+        <p class="abstract-content">{{ page.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="project-body">
+      {{ content }}
+    </div>
+  </article>
+</div>
+

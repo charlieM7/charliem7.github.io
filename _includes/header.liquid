@@ -42,39 +42,39 @@
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
             {% assign p_title_lower = p.title | downcase %}
-            {% if p.nav and p.autogen == null and (p_title_lower == 'publications' or p_title_lower == 'projects' or p_title_lower == 'cv') %}
+            {% if p.nav and p.autogen == null and (p_title_lower contains 'publications' or p_title_lower == 'projects' or p_title_lower == 'cv') %}
               {% assign parent_link = p.permalink | remove: 'index.html' %}
               <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                {%- if p.permalink contains '://' -%}
-                  {%- assign url = p.permalink -%}
-                {%- else -%}
-                  {%- assign url = p.url -%}
-                {%- endif %}
-                <a class="nav-link" href="{{ url | relative_url }}">
-                  {%- if p_title_lower == 'publications' -%}
-                    <i class="ti ti-binoculars" style="margin-right: 0.25rem;"></i> Research
-                  {%- elsif p_title_lower == 'projects' -%}
-                    <i class="ti ti-folder" style="margin-right: 0.25rem;"></i> Projects
-                  {%- elsif p_title_lower == 'cv' -%}
+                {%- if p_title_lower == 'cv' and p.cv_pdf -%}
+                  {%- assign cv_pdf_url = p.cv_pdf -%}
+                  {%- unless cv_pdf_url contains '://' -%}
+                    {%- assign cv_pdf_url = cv_pdf_url | prepend: 'assets/pdf/' | relative_url -%}
+                  {%- endunless -%}
+                  <a class="nav-link" href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer">
                     <i class="ti ti-file-text" style="margin-right: 0.25rem;"></i> CV
+                  </a>
+                {%- else -%}
+                  {%- if p.permalink contains '://' -%}
+                    {%- assign url = p.permalink -%}
+                  {%- else -%}
+                    {%- assign url = p.url -%}
                   {%- endif %}
-                  {% if page.url contains p.url %}
-                    <span class="sr-only">(current)</span>
-                  {% endif %}
-                </a>
+                  <a class="nav-link" href="{{ url | relative_url }}">
+                    {%- if p_title_lower contains 'publications' -%}
+                      <i class="ti ti-binoculars" style="margin-right: 0.25rem;"></i> Publications
+                    {%- elsif p_title_lower == 'projects' -%}
+                      <i class="ti ti-folder" style="margin-right: 0.25rem;"></i> Projects
+                    {%- elsif p_title_lower == 'cv' -%}
+                      <i class="ti ti-file-text" style="margin-right: 0.25rem;"></i> CV
+                    {%- endif %}
+                    {% if page.url contains p.url %}
+                      <span class="sr-only">(current)</span>
+                    {% endif %}
+                  </a>
+                {%- endif -%}
               </li>
             {% endif %}
           {% endfor %}
-          {% if site.enable_darkmode %}
-            <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
-              </button>
-            </li>
-          {% endif %}
         </ul>
       </div>
     </div>

@@ -61,8 +61,8 @@ layout: default
   <header class="post-header" style="text-align: left; margin-top: 0; padding-top: 0.5rem;">
     <h1 class="post-title" style="margin-top: 0; color: #666;">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold" style="color: #666;">{{ site.first_name }}</span> {{ site.middle_name }}
-        <span style="font-weight: 100;">{{ site.last_name }}</span>
+        <span style="font-weight: 100;">{{ site.first_name }}</span> {{ site.middle_name }}
+        <span class="font-weight-bold" style="color: #666;">{{ site.last_name }}</span>
       {% else %}
         {{ site.title }}
       {% endif %}
@@ -134,7 +134,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Select Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

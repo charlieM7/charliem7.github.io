@@ -1,0 +1,82 @@
+{% if project.redirect %}
+  <a href="{{ project.redirect }}" class="project-card-link" target="_blank">
+{% elsif project.url %}
+  <a href="{{ project.url | relative_url }}" class="project-card-link">
+{% else %}
+  <div class="project-card-wrapper">
+{% endif %}
+  <div class="project-card">
+    {% if project.img %}
+      <div class="project-card-image">
+        {% assign img_path = project.img | strip %}
+        {% unless img_path contains '://' %}
+          {% assign first_char = img_path | slice: 0, 1 %}
+          {% if first_char == '/' %}
+            {% comment %} Already starts with /, use as is {% endcomment %}
+          {% elsif img_path contains 'assets/img/' %}
+            {% comment %} Contains assets/img/, just prepend / {% endcomment %}
+            {% assign img_path = '/' | append: img_path %}
+          {% else %}
+            {% comment %} Relative path or just filename, prepend /assets/img/ {% endcomment %}
+            {% assign img_path = '/assets/img/' | append: img_path %}
+          {% endif %}
+        {% endunless %}
+        {%
+          include figure.liquid
+          loading="lazy"
+          path=img_path
+          class="img-fluid"
+          alt=project.title
+        %}
+      </div>
+    {% endif %}
+    <div class="project-card-content">
+      <h3 class="project-title">{{ project.title }}</h3>
+      {% if project.author %}
+        <p class="project-author">{{ project.author }}</p>
+      {% endif %}
+      {% if project.role %}
+        <p class="project-role">Role: {{ project.role }}</p>
+      {% endif %}
+      <p class="project-description">{{ project.description }}</p>
+      {% if project.keywords %}
+        <div class="project-keywords-card">
+          <i class="fa-solid fa-tag" style="color: var(--global-theme-color);"></i>
+          <span>Keywords:</span>
+          <div class="keywords-tags-card">
+            {% assign keywords_array = project.keywords | split: ',' %}
+            {% for keyword in keywords_array %}
+              <span class="keyword-tag-card">{{ keyword | strip }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="project-links" onclick="event.stopPropagation();">
+        {% if project.paper %}
+          <a href="{{ project.paper }}" class="project-link-btn" target="_blank" onclick="event.stopPropagation();">
+            <i class="fa-solid fa-file-pdf"></i> Paper
+          </a>
+        {% elsif project.redirect %}
+          <a href="{{ project.redirect }}" class="project-link-btn" target="_blank" onclick="event.stopPropagation();">
+            <i class="fa-solid fa-file-pdf"></i> Paper
+          </a>
+        {% endif %}
+        {% if project.github %}
+          <a href="{{ project.github }}" class="project-link-btn" target="_blank" onclick="event.stopPropagation();">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        {% endif %}
+        {% if project.website %}
+          <a href="{{ project.website }}" class="project-link-btn website-btn" target="_blank" onclick="event.stopPropagation();">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% if project.redirect or project.url %}
+  </a>
+{% else %}
+  </div>
+{% endif %}
+
