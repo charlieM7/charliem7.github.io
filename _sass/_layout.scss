@@ -2,11 +2,16 @@
  * Content
  ******************************************************************************/
 
+html {
+  height: 100%;
+}
+
 body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
   font-family: Helvetica, Arial, sans-serif;
+  min-height: 100%;
 
   h1,
   h2,
@@ -26,6 +31,15 @@ body.fixed-top-nav {
 body.sticky-bottom-footer {
   // Remove padding below footer.
   padding-bottom: 0;
+  
+  // Make footer stick to bottom using flexbox
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  > .container[role="main"] {
+    flex: 1;
+  }
 }
 
 .container {

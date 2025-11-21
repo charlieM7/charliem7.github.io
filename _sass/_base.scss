@@ -522,10 +522,10 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   padding-top: 0;
-  padding-bottom: 80px;
+  padding-bottom: 1rem;
   font-size: 0.9rem;
   background-color: #ffffff;
-  margin-top: 0.5rem !important;
+  margin-top: auto;
 
   .container {
     text-align: center;
