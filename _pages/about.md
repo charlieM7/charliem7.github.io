@@ -26,7 +26,7 @@ latest_posts:
 <!-- 
 # Charlotte Morissette -->
 
-I am a master's student in Computer Science at **McGill University** - **Mila Québec AI Institute**, advised by **Professor Gregory Dudek**. My <span style="border-bottom: 1px solid #790b74; padding-bottom: 1px;">research is primarily in robot learning</span>, more specifically in modality fusion, tactile sensing, foundation model, reinforcement learning, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
+I am a master's student in Computer Science at **McGill University** - **Mila Québec AI Institute**, advised by **Professor Gregory Dudek**. My <span style="border-bottom: 1px solid #790b74; padding-bottom: 1px;">research is primarily in robot learning</span>, more specifically in modality fusion, tactile sensing, foundation models, reinforcement learning, HRI, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
 
 If our interests align, please feel free to reach out — I am always happy to discuss potential research or collaboration opportunities. I am currently looking for PhD positions, research internships, or roles starting in Fall 2026.
 
