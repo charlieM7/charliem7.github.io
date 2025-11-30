@@ -7,6 +7,8 @@ abstract_subtitle: In review at International Conference on Learning Representat
 importance: 2
 category: work
 date: 2025-01-01
+paper: https://openreview.net/pdf?id=iKJbmx1iuQ
+website: https://contractive-diffusion.github.io/
 keywords: diffusion policies, robust policy learning, robot learning
 giscus_comments: true
 ---
