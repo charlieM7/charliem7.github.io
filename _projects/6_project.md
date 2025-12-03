@@ -2,7 +2,7 @@
 layout: project
 title: A Study of Human-Robot Handover through Human-Human Object Transfer
 description: 
-img: /assets/img/hri6.png
+img: /assets/img/tactile2.png
 importance: 4
 category: fun
 date: 2023-01-04
