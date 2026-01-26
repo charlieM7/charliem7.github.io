@@ -3,7 +3,7 @@ layout: project
 title: Visual-Tactile Inference of 2.5D Object Shape from Marker Texture
 description: 
 img: assets/img/shape_touch.png
-abstract_subtitle: In IEEE Robotics and Automation Letters (RA-L), presented at ICRA 2025.
+abstract_subtitle: IEEE Robotics and Automation Letters (RA-L), presented at ICRA 2025.
 importance: 3
 category: work
 date: 2024-01-01

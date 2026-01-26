@@ -3,7 +3,7 @@ layout: project
 title: Contractive Diffusion Policies
 description:
 img: assets/img/diffusion3.png
-abstract_subtitle: In review at International Conference on Learning Representations (ICLR) 2026.
+abstract_subtitle: International Conference on Learning Representations (ICLR) 2026.
 importance: 2
 category: work
 date: 2025-01-01

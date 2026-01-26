@@ -3,6 +3,7 @@ layout: project
 title: A Study of Human-Robot Handover through Human-Human Object Transfer
 description: 
 img: /assets/img/tactile2.png
+abstract_subtitle: Neural Information Processing Systems (NeurIPS), Human in the Loop Learning (HiLL) Workshop.
 importance: 4
 category: fun
 date: 2023-01-04
