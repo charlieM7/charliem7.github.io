@@ -1,9 +1,9 @@
 ---
 layout: project
-title: Modality Fusion For Vision-Language-Action (VLA) Models
+title: Modality Fusion for Vision-Language-Action (VLA) Models
 description: 
 img: assets/img/tactile-vla.png
-abstract_subtitle: To be submitted to International Conference on Machine Learning (ICML) 2026.
+abstract_subtitle: Submitted to the European Conference on Computer Vision (ECCV) 2026.
 importance: 1
 category: work
 date: 2025-04-12
