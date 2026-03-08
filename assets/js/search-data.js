@@ -455,7 +455,7 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-modality-fusion-for-vision-language-action-vla-models",
-          title: 'Modality Fusion For Vision-Language-Action (VLA) Models',
+          title: 'Modality Fusion for Vision-Language-Action (VLA) Models',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
