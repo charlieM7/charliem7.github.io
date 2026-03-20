@@ -1,12 +1,13 @@
 ---
 layout: project
-title: Modality Fusion for Vision-Language-Action (VLA) Models
+title: Tactile Modality Fusion for Vision-Language-Action (VLA) Models
 description: 
 img: assets/img/tactile-vla.png
 #abstract_subtitle: Submitted to European Conference on Computer Vision (ECCV) 2026.
 importance: 1
 category: work
 date: 2025-04-12
+paper: https://arxiv.org/abs/2603.14604
 keywords: VLA, tactile sensing, multimodal data, sensor fusion, robot learning
 related_publications: true
 ---
