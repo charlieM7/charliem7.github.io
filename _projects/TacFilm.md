@@ -25,8 +25,8 @@ data_soon: true
 venues:
   - name: "Accepted to ECCV 2026"
     url: https://eccv.ecva.net/
-  - name: "Accepted to CVPR ActiVis Workshop"
-    url: https://activis-workshop.github.io/
+  # - name: "Accepted to CVPR ActiVis Workshop"
+  #   url: https://activis-workshop.github.io/
 keywords: Vision-Language-Action (VLA) Models, Tactile Sensing, Multimodal Fusion, Robot Learning
 related_publications: true
 ---
