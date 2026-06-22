@@ -1935,3 +1935,9 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+/* BibTeX override */
+.language-bibtex,
+.language-bibtex * {
+  color: var(--global-text-color) !important;
+}
