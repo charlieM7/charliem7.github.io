@@ -11,6 +11,12 @@ layout: default
 <div class="post project-detail">
   <header class="post-header project-header">
     <h1 class="post-title project-title">{{ page.title }}</h1>
+    {% if page.authors %}
+      <div class="project-authors">{{ page.authors }}</div>
+    {% endif %}
+    {% if page.affiliations %}
+      <p class="project-affiliation">{{ page.affiliations }}</p>
+    {% endif %}
   </header>
 
   <article class="project-content">
@@ -38,7 +44,33 @@ layout: default
                 <i class="fa-solid fa-globe"></i> Website
               </a>
             {% endif %}
+            {% if page.code_soon %}
+              <span class="project-link-btn-metadata soon-btn">
+                <i class="fa-brands fa-github"></i> Code (soon)
+              </span>
+            {% endif %}
+            {% if page.data_soon %}
+              <span class="project-link-btn-metadata soon-btn">
+                <i class="fa-solid fa-database"></i> Data (soon)
+              </span>
+            {% endif %}
           </div>
+
+          {% if page.venues %}
+            <div class="project-venues">
+              {% for venue in page.venues %}
+                {% if venue.url %}
+                  <a href="{{ venue.url }}" class="venue-badge" target="_blank">
+                    <i class="fa-solid fa-award"></i> {{ venue.name }}
+                  </a>
+                {% else %}
+                  <span class="venue-badge">
+                    <i class="fa-solid fa-award"></i> {{ venue.name }}
+                  </span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
 
           {% if page.keywords %}
             <div class="metadata-item keywords-item">
@@ -54,7 +86,7 @@ layout: default
           {% endif %}
         </div>
 
-        {% if page.date %}
+        {% if page.date and page.hide_date != true %}
           <div class="metadata-item date-item">
             <span>{{ page.date | date: "%Y" }}</span>
           </div>
@@ -63,7 +95,7 @@ layout: default
     </div>
 
     <!-- Project Image -->
-    {% if page.img %}
+    {% if page.img and page.hide_hero != true %}
       <div class="project-hero-image">
         {% assign img_path = page.img | strip %}
         {% unless img_path contains '://' %}
@@ -89,15 +121,17 @@ layout: default
     {% endif %}
 
     <!-- Abstract Section -->
-    <div class="project-abstract">
-      <h2 class="abstract-title">Abstract</h2>
-      {% if page.abstract_subtitle %}
-        <p class="abstract-subtitle">{{ page.abstract_subtitle }}</p>
-      {% endif %}
-      {% if page.description and page.description != "" %}
-        <p class="abstract-content">{{ page.description }}</p>
-      {% endif %}
-    </div>
+    {% if page.abstract_subtitle != blank or page.description != blank %}
+      <div class="project-abstract">
+        <h2 class="abstract-title">{{ page.abstract_title | default: 'Abstract' }}</h2>
+        {% if page.abstract_subtitle %}
+          <p class="abstract-subtitle">{{ page.abstract_subtitle }}</p>
+        {% endif %}
+        {% if page.description and page.description != "" %}
+          <p class="abstract-content">{{ page.description }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
 
     <!-- Main Content -->
     <div class="project-body">

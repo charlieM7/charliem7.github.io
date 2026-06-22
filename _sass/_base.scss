@@ -948,7 +948,7 @@ footer.sticky-bottom {
   }
 
   .project-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2rem;
   }
 
@@ -994,6 +994,7 @@ footer.sticky-bottom {
         flex: 1;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
         
         .keywords-tags {
@@ -1019,6 +1020,8 @@ footer.sticky-bottom {
 
     .project-links-metadata {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 0.75rem;
       margin-bottom: 0;
       margin-top: 0;
@@ -1062,6 +1065,57 @@ footer.sticky-bottom {
           background-color: var(--global-theme-color);
           color: #ffffff;
         }
+      }
+
+      &.soon-btn {
+        opacity: 0.65;
+        border-style: dashed;
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+          color: inherit;
+        }
+      }
+
+      i {
+        font-size: 0.9rem;
+      }
+    }
+
+    .project-venues {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .venue-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      color: #4b3b66;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #cdbcf7 0%, #f5c2e7 100%);
+      box-shadow: 0 4px 14px rgba(167, 139, 250, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:nth-child(2n) {
+        color: #2f5d52;
+        background: linear-gradient(135deg, #a6e6d8 0%, #c7f0cf 100%);
+        box-shadow: 0 4px 14px rgba(110, 231, 214, 0.25);
+      }
+
+      &:hover {
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(167, 139, 250, 0.35);
       }
 
       i {
@@ -1115,6 +1169,40 @@ footer.sticky-bottom {
     margin-top: 2rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .project-authors {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.4rem;
+
+    a {
+      color: var(--global-theme-color);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    sup {
+      font-size: 0.7rem;
+      opacity: 0.85;
+    }
+  }
+
+  .project-affiliation {
+    color: var(--global-text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+    sup {
+      font-size: 0.7rem;
+    }
   }
 }
 
