@@ -433,32 +433,32 @@ ninja.data = [{
           title: 'Hypernetworks for Zero-shot Transfer in Reinforcement Learning',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
+              window.location.href = "/projects/HyperZero/";
             },},{id: "projects-contextual-control-suite",
           title: 'Contextual Control Suite',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
+              window.location.href = "/projects/contextual_control/";
             },},{id: "projects-a-study-of-human-robot-handover-through-human-human-object-transfer",
           title: 'A Study of Human-Robot Handover through Human-Human Object Transfer',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
+              window.location.href = "/projects/handover/";
             },},{id: "projects-visual-tactile-inference-of-2-5d-object-shape-from-marker-texture",
           title: 'Visual-Tactile Inference of 2.5D Object Shape from Marker Texture',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
+              window.location.href = "/projects/shape_from_touch/";
             },},{id: "projects-contractive-diffusion-policies",
           title: 'Contractive Diffusion Policies',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/CDP/";
             },},{id: "projects-tactile-modality-fusion-for-vision-language-action-vla-models",
           title: 'Tactile Modality Fusion for Vision-Language-Action (VLA) Models',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/TacFilm/";
             },},{
         id: 'social-email',
         title: 'email',
