@@ -6,7 +6,7 @@ subtitle: M.Sc. Computer Science, AI and Robotics | McGill University - Mila Qu√
 
 profile:
   align: left
-  image: charlie3.jpeg
+  image: profile_picture.png
   image_circular: false # crops the image to make it circular
   more_info: 
 
