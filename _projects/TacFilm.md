@@ -36,7 +36,13 @@ related_publications: true
 
 <h2 class="text-center">Summary</h2>
 
+<div class="row justify-content-center" markdown="1">
+<div class="col-md-10"  markdown="1">
+
 Vision-Language-Action (VLA) models are a powerful recipe for general-purpose robots, but a camera cannot *feel*, and that is exactly what precise, contact-rich tasks demand. **TacFiLM** brings touch to a pretrained VLA through feature-wise linear modulation (FiLM): instead of bolting on extra tactile tokens, it lets tactile signals directly condition the model's visual features. The result keeps the vision-language backbone intact, adds almost no inference overhead, and adapts from modest data, while improving success and force stability on hard insertion tasks. This work was done in collaboration with NVIDIA Research.
+
+</div>
+</div>
 
 ## The problem with vision-only manipulation
 

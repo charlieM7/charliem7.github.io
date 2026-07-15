@@ -1169,6 +1169,11 @@ footer.sticky-bottom {
     margin-top: 2rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
+    text-align: justify;
+
+    p {
+    margin-bottom: 2.0rem;
+    }
   }
 
   .project-authors {
