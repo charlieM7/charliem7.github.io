@@ -42,29 +42,79 @@ rollout_videos:
     label: USB Cable Plug
   - src: assets/video/drawer.mp4
     label: Open Drawer
+
+id_results:
+  - "OpenVLA-OFT,58.1,12.4,14.94,126.7"
+  - "TactileConcat,64.8,10.5,10.27,113.0"
+  - "!!Cross-Attn,48.0,12.0,13.43,149.9"
 ---
 
-{% include video.liquid path="assets/video/supplementary_final.mp4" class="img-fluid rounded" controls=true muted=true loop=true autoplay=true caption="TacFiLM in action on contact-rich manipulation." %}
+{% include video.liquid path="assets/video/supplementary_final.mp4" class="img-fluid rounded" controls=true muted=true loop=true autoplay=true %}
 
 <h2 class="text-center">Summary</h2>
 
 <div class="row justify-content-center" markdown="1">
 <div class="col-md-10"  markdown="1">
 
-Vision-Language-Action (VLA) models are a powerful recipe for general-purpose robots, but a camera cannot *feel*, and that is exactly what precise, contact-rich tasks demand. **TacFiLM** brings touch to a pretrained VLA through feature-wise linear modulation (FiLM): instead of bolting on extra tactile tokens, it lets tactile signals directly condition the model's visual features. The result keeps the vision-language backbone intact, adds almost no inference overhead, and adapts from modest data, while improving success and force stability on hard insertion tasks. This work was done in collaboration with NVIDIA Research.
+<!-- Vision-Language-Action (VLA) models are a powerful recipe for general-purpose robots, but a camera cannot *feel*, and that is exactly what precise, contact-rich tasks demand. **TacFiLM** brings touch to a pretrained VLA through feature-wise linear modulation (FiLM): instead of bolting on extra tactile tokens, it lets tactile signals directly condition the model's visual features. The result keeps the vision-language backbone intact, adds almost no inference overhead, and adapts from modest data, while improving success and force stability on hard insertion tasks. This work was done in collaboration with NVIDIA Research. -->
+
+While advances in vision-language-action models (VLAs) have introduced robot policies that are both generalizable and semantically grounded, these models mainly rely on vision-based perception. Vision alone, however, cannot capture the complex interaction dynamics that occur during contact-rich manipulation, including contact forces, surface friction, compliance, and shear. Recent attempts to integrate tactile signals into VLA models often increase complexity through token concatenation or large-scale pretraining, yet the heavy computational demands of behaviour models necessitate lightweight fusion strategies.
+<br>
+<br>
+We propose **TacFiLM** to address these challenges, a lightweight modality-fusion approach that integrates visual-tactile signals into vision-language-action (VLA) models. Our approach outlines a post-training finetuning approach that conditions intermediate visual features on pretrained tactile representations using featurewise linear modulation (FiLM). 
+<br>
+<br>
+Experimental results on insertion and drawer opening tasks demonstrate consistent improvements in success rate, direct task performance, completion time, and force stability across both in-distribution and out-of-distribution tasks. Together, these results support our method as an effective approach to integrating tactile signals into VLA models, improving contact-rich manipulation behaviours.
 
 </div>
 </div>
 
-## The problem with vision-only manipulation
+<div class="tldr-box" markdown="1">
+## **TLDR**
+**Our main contributions are summarized as follows:**
+* TacFiLM, a novel lightweight modality fusion approach that integrates tactile signals
+through image conditioning.
+* Comprehensive experiments showing that TacFiLM improves success rates
+by up to 50% with shorter episodes and reduced contact forces compared to
+concatenation and cross-attention-based fusion
+* An investigation of the use of pretrained tactile encoders such as [Sparsh](https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/)
+and [T3](https://arxiv.org/abs/2406.13640) in fusing tactile signals into VLA models.
 
-VLA models map an image and a language instruction straight to actions, and they generalize impressively thanks to internet-scale pretraining. But whether a peg is fully seated, how much a surface grips, or whether the gripper is touching at all simply does not show up reliably in an RGB frame, and occlusion hides the contact at the very moment it matters. Visuo-tactile sensors like [DIGIT](https://digit.ml/) close that gap with a dense image of the contact surface; the real question is how to fold that signal into a VLA without paying for it in compute, data, or stability.
+</div>
+<style>
+  .tldr-box {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 1rem 0 1.5rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.tldr-box > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tldr-box > p {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.tldr-box > ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+}
+</style>
 
 {% include figure.liquid loading="lazy" path="assets/img/tacfilm_overview.png" class="img-fluid rounded" zoomable=true caption="Vision tells the policy where things are; touch tells it what is actually happening at the contact. TacFiLM adds the tactile channel to a pretrained VLA so the model can reason about contact it cannot see." %}
-
-## Why naive fusion is expensive
-
-The obvious approach is to encode the tactile image into extra tokens and concatenate them to the input. It works, but it is costly where it hurts: more tokens mean longer sequences and slower inference, the reshuffled attention forces the model to relearn how to use its own visual features (demanding scarce paired tactile data), and heavy retraining erodes the very pretraining that made the VLA useful. We wanted fusion that is *additive*, not *invasive*: light on overhead, gentle on the backbone, and learnable from a handful of demonstrations.
 
 ## TacFiLM: conditioning vision on touch
 
@@ -80,6 +130,12 @@ TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https:/
 We test TacFiLM on contact-rich **insertion** with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch lifts both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information, and it does so without the cost of token-level fusion. Encouragingly, pretrained tactile encoders transfer cleanly, hinting that touch foundation models can become a reusable building block for VLAs.
 
 {% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
+
+ {% include results_table.liquid
+      title=" In-distribution results (avg. across 4 tasks)"
+      headers="Method,Success (%),Direct (%),Max Force (N),Time (s)"
+      open=false
+      rows=page.id_results %}
 
 *Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.*
 
