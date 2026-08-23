@@ -2,7 +2,7 @@
 layout: project
 title: Tactile Modality Fusion for Vision-Language-Action (VLA) Models
 description:
-img: assets/img/tactile-vla.png
+img: assets/img/tacfilm_overview.png
 hide_hero: true
 hide_date: true
 authors: >
@@ -29,10 +29,22 @@ venues:
   #   url: https://activis-workshop.github.io/
 keywords: Vision-Language-Action (VLA) Models, Tactile Sensing, Multimodal Fusion, Robot Learning
 related_publications: true
+rollout_videos:
+  - src: assets/video/circle3mm.mp4
+    label: Circle Peg Insertion
+  - src: assets/video/square3mm.mp4
+    label: Square Peg Insertion
+  - src: assets/video/pentagon3mm.mp4
+    label: Pentagon Peg Insertion
+  - src: assets/video/hdmi.mp4
+    label: HDMI Cable Plug
+  - src: assets/video/usb.mp4
+    label: USB Cable Plug
+  - src: assets/video/drawer.mp4
+    label: Open Drawer
 ---
 
-{% include video.liquid path="assets/video/TacFiLM_Supplementary.mp4" class="img-fluid rounded" controls=true muted=true loop=true autoplay=true caption="TacFiLM in action on contact-rich manipulation." %}
-
+{% include video.liquid path="assets/video/supplementary_final.mp4" class="img-fluid rounded" controls=true muted=true loop=true autoplay=true caption="TacFiLM in action on contact-rich manipulation." %}
 
 <h2 class="text-center">Summary</h2>
 
@@ -56,15 +68,18 @@ The obvious approach is to encode the tactile image into extra tokens and concat
 
 ## TacFiLM: conditioning vision on touch
 
-TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https://arxiv.org/abs/1709.07871). A tactile encoder reads the contact image and predicts per-channel **scale** (gamma) and **shift** (beta) values; each visual feature is then scaled and offset accordingly. In effect, touch is allowed to reweight and bias what vision sees, amplifying what matters at contact and damping the rest, all without lengthening the sequence the transformer processes. Because we condition rather than re-architect, the [OpenVLA](https://openvla.github.io/) backbone stays intact, latency barely moves, and adaptation is fast and data-efficient. We also reuse **pretrained tactile encoders** such as [T3](https://arxiv.org/abs/2406.13640) and [Sparsh](https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/), so TacFiLM benefits from tactile pretraining the same way the VLA already benefits from vision-language pretraining.
+TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https://arxiv.org/abs/1709.07871). A tactile encoder reads the contact image and predicts per-channel **scale** (gamma) and **shift** (beta) values; each visual feature is then scaled and offset accordingly. In effect, touch is allowed to reweight and bias what vision sees, amplifying what matters at contact and damping the rest, all without lengthening the sequence the transformer processes. Because we condition rather than re-architect, the [OpenVLA-OFT](https://openvla-oft.github.io/) backbone stays intact, latency barely moves, and adaptation is fast and data-efficient. We also reuse **pretrained tactile encoders** such as [T3](https://arxiv.org/abs/2406.13640) and [Sparsh](https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/), so TacFiLM benefits from tactile pretraining the same way the VLA already benefits from vision-language pretraining.
 
 {% include figure.liquid loading="lazy" path="assets/img/tacfilm_method.png" class="img-fluid rounded" zoomable=true caption="The TacFiLM architecture. A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched." %}
+
+## Tasks
+{% include video_carousel.liquid videos=page.rollout_videos %}
 
 ## Results
 
 We test TacFiLM on contact-rich **insertion** with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch lifts both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information, and it does so without the cost of token-level fusion. Encouragingly, pretrained tactile encoders transfer cleanly, hinting that touch foundation models can become a reusable building block for VLAs.
 
-{% include figure.liquid loading="lazy" path="assets/img/tacfilm_exps.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
+{% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
 
 *Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.*
 
