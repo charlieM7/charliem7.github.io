@@ -121,23 +121,24 @@ and [T3](https://arxiv.org/abs/2406.13640) in fusing tactile signals into VLA mo
 }
 </style>
 
-{% include figure.liquid loading="lazy" path="assets/img/tacfilm_overview.png" class="img-fluid rounded" zoomable=true caption="Vision tells the policy where things are; touch tells it what is actually happening at the contact. TacFiLM adds the tactile channel to a pretrained VLA so the model can reason about contact it cannot see." %}
+{% include figure.liquid loading="lazy" path="assets/img/tacfilm_overview.png" class="img-fluid rounded" zoomable=true caption="**TacFiLM Overview.** The left panel shows the model inputs, including tactile, visual, and language modalities. In grey, baseline approaches. To the right, we show our proposed TacFiLM-augmented VLA. The rightmost boxes show model outputs and rollouts."%}
 
 ## TacFiLM: conditioning vision on touch
 
 TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https://arxiv.org/abs/1709.07871). A tactile encoder reads the contact image and predicts per-channel **scale** (gamma) and **shift** (beta) values; each visual feature is then scaled and offset accordingly. In effect, touch is allowed to reweight and bias what vision sees, amplifying what matters at contact and damping the rest, all without lengthening the sequence the transformer processes. Because we condition rather than re-architect, the [OpenVLA-OFT](https://openvla-oft.github.io/) backbone stays intact, latency barely moves, and adaptation is fast and data-efficient. We also reuse **pretrained tactile encoders** such as [T3](https://arxiv.org/abs/2406.13640) and [Sparsh](https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/), so TacFiLM benefits from tactile pretraining the same way the VLA already benefits from vision-language pretraining.
 
-{% include figure.liquid loading="lazy" path="assets/img/tacfilm_method.png" class="img-fluid rounded" zoomable=true caption="The TacFiLM architecture. A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched." %}
+{% include figure.liquid loading="lazy" path="assets/img/tacfilm_method.png" class="img-fluid rounded" zoomable=true caption="**TacFiLM architecture.** A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched." %}
 
 ## Tasks
-<!-- {% include video_carousel.liquid videos=page.rollout_videos %} -->
+{% include figure.liquid loading="lazy" path="assets/img/task_setup.png" class="img-fluid rounded" zoomable=true caption="**Task definitions.** Insertion tasks differ in peg or connector shape and clearance but share the goal of successful insertion. Open-drawer consists of hooking the gripper under the drawer and pulling it open." %}
+
 {% include video_carousel.liquid videos=page.rollout_videos cards_visible=3 %}
 
 ## Results
 
-We test TacFiLM on contact-rich **insertion** with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch lifts both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information, and it does so without the cost of token-level fusion. Encouragingly, pretrained tactile encoders transfer cleanly, hinting that touch foundation models can become a reusable building block for VLAs.
+We test TacFiLM on contact-rich **insertion** and **opening** tasks with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch increases both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information. *Please see paper for full results including bot an ablation study and tactile representation analysis.*
 
-{% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
+{% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption=" **Insertions task ID results.** Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
 
  {% include results_table.liquid
       title=" In-distribution results (avg. across 4 tasks)"
