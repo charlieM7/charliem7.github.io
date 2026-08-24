@@ -8,10 +8,10 @@ hide_date: true
 authors: >
   <a href="https://charliem7.github.io/" target="_blank"><strong>Charlotte Morissette</strong></a><sup>1,2</sup>,
   <a href="https://aminabyaneh.github.io/" target="_blank">Amin Abyaneh</a><sup>1,2</sup>,
-  <a href="https://weidi-chang.github.io/" target="_blank">Wei-Di Chang</a><sup>3</sup>,
+  <a href="https://weidi-chang.github.io/" target="_blank">Wei-Di Chang</a><sup>1,2</sup>,
   <a href="https://anashoussaini.github.io/" target="_blank">Anas Houssaini</a><sup>1,2</sup>,
   <a href="https://cim.mcgill.ca/~dmeger/" target="_blank">David Meger</a><sup>1,2</sup>,
-  <a href="https://sites.google.com/site/hsiuchinlin/" target="_blank">Hsiu-Chin Lin</a><sup>3</sup>,
+  <a href="https://sites.google.com/site/hsiuchinlin/" target="_blank">Hsiu-Chin Lin</a><sup>1,2</sup>,
   <a href="https://research.nvidia.com/person/jonathan-tremblay" target="_blank">Jonathan Tremblay</a><sup>3</sup>,
   <a href="https://cim.mcgill.ca/~dudek/" target="_blank">Gregory Dudek</a><sup>1,2</sup>
 affiliations: >
@@ -131,11 +131,11 @@ We test TacFiLM on contact-rich **insertion** with a [Franka Panda](https://fran
 
 {% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
 
- {% include results_table.liquid
+ <!-- {% include results_table.liquid
       title=" In-distribution results (avg. across 4 tasks)"
       headers="Method,Success (%),Direct (%),Max Force (N),Time (s)"
       open=false
-      rows=page.id_results %}
+      rows=page.id_results %} -->
 
 *Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.*
 
