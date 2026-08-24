@@ -44,9 +44,16 @@ rollout_videos:
     label: Open Drawer
 
 id_results:
-  - "OpenVLA-OFT,58.1,12.4,14.94,126.7"
-  - "TactileConcat,64.8,10.5,10.27,113.0"
-  - "!!Cross-Attn,48.0,12.0,13.43,149.9"
+  - "OpenVLA-OFT,58.0,12.38,14.94 ± 9.16,126.7 ± 51.34"
+  - "TactileConcat,64.76,10.48,10.27 ± 4.12,113.04 ± 52.31"
+  - "Cross-Attn,48.00,12.00,13.43 ± 12.62,149.92 ± 39.01"
+  - "!!TacFiLM (ours),**86.67**,**37.14**,**8.65** ± 3.80,**81.72** ± 38.00"
+
+ood_results:
+  - "OpenVLA-OFT,54.67,0.00,22.46 ± 15.75,89.48 ± 46.05"
+  - "TactileConcat,73.33,8.00,6.47 ± 10.54,105.79 ± 43.16"
+  - "Cross-Attn,49.33,5.33,19.27 ± 14.62,149.77 ± 33.72"
+  - "!!TacFiLM (ours),**86.67**,**29.33**,**8.40** ± 4.71,**87.84** ± 42.69"
 ---
 
 {% include video.liquid path="assets/video/supplementary_final.mp4" class="img-fluid rounded" controls=true muted=true loop=true autoplay=true %}
@@ -123,7 +130,8 @@ TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https:/
 {% include figure.liquid loading="lazy" path="assets/img/tacfilm_method.png" class="img-fluid rounded" zoomable=true caption="The TacFiLM architecture. A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched." %}
 
 ## Tasks
-{% include video_carousel.liquid videos=page.rollout_videos %}
+<!-- {% include video_carousel.liquid videos=page.rollout_videos %} -->
+{% include video_carousel.liquid videos=page.rollout_videos cards_visible=3 %}
 
 ## Results
 
@@ -131,11 +139,17 @@ We test TacFiLM on contact-rich **insertion** with a [Franka Panda](https://fran
 
 {% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption="Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
 
- <!-- {% include results_table.liquid
+ {% include results_table.liquid
       title=" In-distribution results (avg. across 4 tasks)"
       headers="Method,Success (%),Direct (%),Max Force (N),Time (s)"
       open=false
-      rows=page.id_results %} -->
+      rows=page.id_results %}
+
+  {% include results_table.liquid
+      title=" Out-of-distribution results (avg. across 5 tasks)"
+      headers="Method,Success (%),Direct (%),Max Force (N),Time (s)"
+      open=false
+      rows=page.id_results %}
 
 *Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.*
 

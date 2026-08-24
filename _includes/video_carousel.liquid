@@ -113,18 +113,21 @@
 
   .video-carousel-label {
     position: absolute;
-    left: 50%;
+    left: 8px;
+    right: 8px;
     bottom: 14px;
-    transform: translateX(-50%);
     background: #ece4fb;
     color: #5a5a5a;
     font-weight: 400;
-    font-size: 0.9rem;
-    padding: 5px 18px;
+    font-size: 0.85rem;
+    padding: 5px 14px;
     border-radius: 999px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     pointer-events: none;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
   }
 
   .video-carousel-arrow {
