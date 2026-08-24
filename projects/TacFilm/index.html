@@ -7,114 +7,340 @@
 </script> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Inter:400,500,600,700&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%98%98%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://charliem7.github.io/projects/TacFilm/"> <script async src="https://plausible.io/js/pa-j92j9ON6H_YFEuU_bWpbk.js"></script> <script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
-</script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <div class="navbar-brand social"> <a href="mailto:%63%68%61%72%6C%6F%74%74%65.%6D%6F%72%69%73%73%65%74%74%65@%6D%61%69%6C.%6D%63%67%69%6C%6C.%63%61" title="email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/charliem7" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/charlotte-morissette" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://scholar.google.com/citations?user=TwF7zuoAAAAJ" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> </div> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/"> <i class="ti ti-home" style="margin-right: 0.25rem;"></i> Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"><i class="ti ti-binoculars" style="margin-right: 0.25rem;"></i> Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/"><i class="ti ti-folder" style="margin-right: 0.25rem;"></i> Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "><a class="nav-link" href="/assets/pdf/Charlotte_CV.pdf" target="_blank" rel="noopener noreferrer"> <i class="ti ti-file-text" style="margin-right: 0.25rem;"></i> CV </a></li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post project-detail"> <header class="post-header project-header"> <h1 class="post-title project-title">Tactile Modality Fusion for Vision-Language-Action (VLA) Models</h1> <div class="project-authors"> <a href="https://charliem7.github.io/" target="_blank"><strong>Charlotte Morissette</strong></a><sup>1,2</sup>, <a href="https://aminabyaneh.github.io/" target="_blank" rel="external nofollow noopener">Amin Abyaneh</a><sup>1,2</sup>, <a href="https://weidi-chang.github.io/" target="_blank" rel="external nofollow noopener">Wei-Di Chang</a><sup>1,2</sup>, <a href="https://anashoussaini.github.io/" target="_blank" rel="external nofollow noopener">Anas Houssaini</a><sup>1,2</sup>, <a href="https://cim.mcgill.ca/~dmeger/" target="_blank" rel="external nofollow noopener">David Meger</a><sup>1,2</sup>, <a href="https://sites.google.com/site/hsiuchinlin/" target="_blank" rel="external nofollow noopener">Hsiu-Chin Lin</a><sup>1,2</sup>, <a href="https://research.nvidia.com/person/jonathan-tremblay" target="_blank" rel="external nofollow noopener">Jonathan Tremblay</a><sup>3</sup>, <a href="https://cim.mcgill.ca/~dudek/" target="_blank" rel="external nofollow noopener">Gregory Dudek</a><sup>1,2</sup> </div> <p class="project-affiliation"><sup>1</sup> McGill University   ·   <sup>2</sup> Mila — Quebec AI Institute   ·   <sup>3</sup> NVIDIA </p> </header> <article class="project-content"> <div class="project-metadata"> <div class="metadata-header-row"> <div class="metadata-left-section"> <div class="project-links-metadata"> <a href="https://arxiv.org/abs/2603.14604" class="project-link-btn-metadata" target="_blank" rel="external nofollow noopener"> <i class="fa-solid fa-file-pdf"></i> Paper </a> <span class="project-link-btn-metadata soon-btn"> <i class="fa-brands fa-github"></i> Code (soon) </span> <span class="project-link-btn-metadata soon-btn"> <i class="fa-solid fa-database"></i> Data (soon) </span> </div> <div class="project-venues"> <a href="https://eccv.ecva.net/" class="venue-badge" target="_blank" rel="external nofollow noopener"> <i class="fa-solid fa-award"></i> Accepted to ECCV 2026 </a> </div> <div class="metadata-item keywords-item"> <i class="fa-solid fa-tag" style="color: var(--global-theme-color);"></i> <span>Keywords:</span> <div class="keywords-tags"> <span class="keyword-tag">Vision-Language-Action (VLA) Models</span> <span class="keyword-tag">Tactile Sensing</span> <span class="keyword-tag">Multimodal Fusion</span> <span class="keyword-tag">Robot Learning</span> </div> </div> </div> </div> </div> <div class="project-body"> <figure> <video src="/assets/video/supplementary_final.mp4" class="img-fluid rounded" width="auto" height="auto" autoplay="" controls="" loop="" muted=""></video> </figure> <h2 class="text-center">Summary</h2> <div class="row justify-content-center"> <div class="col-md-10"> <p>While advances in vision-language-action models (VLAs) have introduced robot policies that are both generalizable and semantically grounded, these models mainly rely on vision-based perception. Vision alone, however, cannot capture the complex interaction dynamics that occur during contact-rich manipulation, including contact forces, surface friction, compliance, and shear. Recent attempts to integrate tactile signals into VLA models often increase complexity through token concatenation or large-scale pretraining, yet the heavy computational demands of behaviour models necessitate lightweight fusion strategies. <br> <br> We propose <strong>TacFiLM</strong> to address these challenges, a lightweight modality-fusion approach that integrates visual-tactile signals into vision-language-action (VLA) models. Our approach outlines a post-training finetuning approach that conditions intermediate visual features on pretrained tactile representations using featurewise linear modulation (FiLM). <br> <br> Experimental results on insertion and drawer opening tasks demonstrate consistent improvements in success rate, direct task performance, completion time, and force stability across both in-distribution and out-of-distribution tasks. Together, these results support our method as an effective approach to integrating tactile signals into VLA models, improving contact-rich manipulation behaviours.</p> </div> </div> <div class="tldr-box"> <h2 id="tldr"><strong>TLDR</strong></h2> <p><strong>Our main contributions are summarized as follows:</strong></p> <ul> <li>TacFiLM, a novel lightweight modality fusion approach that integrates tactile signals through image conditioning.</li> <li>Comprehensive experiments showing that TacFiLM improves success rates by up to 50% with shorter episodes and reduced contact forces compared to concatenation and cross-attention-based fusion</li> <li>An investigation of the use of pretrained tactile encoders such as <a href="https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/" rel="external nofollow noopener" target="_blank">Sparsh</a> and <a href="https://arxiv.org/abs/2406.13640" rel="external nofollow noopener" target="_blank">T3</a> in fusing tactile signals into VLA models.</li> </ul> </div> <style>.tldr-box{background:#f5f5f5;border-radius:10px;padding:1.5rem 2rem;margin:1rem 0 1.5rem;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.tldr-box>*{max-width:900px;margin-left:auto;margin-right:auto}.tldr-box>p{margin-top:0!important;margin-bottom:.5rem!important;margin-left:auto!important;margin-right:auto!important}.tldr-box>ul{margin-top:0!important;margin-bottom:0!important;margin-left:auto!important;margin-right:auto!important;padding-top:0!important}</style> <figure> <picture> <img src="/assets/img/tacfilm_overview.png" class="img-fluid rounded" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> <figcaption class="caption">Vision tells the policy where things are; touch tells it what is actually happening at the contact. TacFiLM adds the tactile channel to a pretrained VLA so the model can reason about contact it cannot see.</figcaption> </figure> <h2 id="tacfilm-conditioning-vision-on-touch">TacFiLM: conditioning vision on touch</h2> <p>TacFiLM integrates touch through <a href="https://arxiv.org/abs/1709.07871" rel="external nofollow noopener" target="_blank">feature-wise linear modulation (FiLM)</a>. A tactile encoder reads the contact image and predicts per-channel <strong>scale</strong> (gamma) and <strong>shift</strong> (beta) values; each visual feature is then scaled and offset accordingly. In effect, touch is allowed to reweight and bias what vision sees, amplifying what matters at contact and damping the rest, all without lengthening the sequence the transformer processes. Because we condition rather than re-architect, the <a href="https://openvla-oft.github.io/" rel="external nofollow noopener" target="_blank">OpenVLA-OFT</a> backbone stays intact, latency barely moves, and adaptation is fast and data-efficient. We also reuse <strong>pretrained tactile encoders</strong> such as <a href="https://arxiv.org/abs/2406.13640" rel="external nofollow noopener" target="_blank">T3</a> and <a href="https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/" rel="external nofollow noopener" target="_blank">Sparsh</a>, so TacFiLM benefits from tactile pretraining the same way the VLA already benefits from vision-language pretraining.</p> <figure> <picture> <img src="/assets/img/tacfilm_method.png" class="img-fluid rounded" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> <figcaption class="caption">The TacFiLM architecture. A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched.</figcaption> </figure> <h2 id="tasks">Tasks</h2> <div class="video-carousel" id="000000000" style="--cards-visible: 3;"> <div class="video-carousel-viewport"> <button class="video-carousel-arrow prev" aria-label="Previous video" type="button">‹</button> <div class="video-carousel-track"> <div class="video-carousel-card" data-index="0"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/circle3mm.mp4"> </video> <span class="video-carousel-label">Circle Peg Insertion</span> </div> <div class="video-carousel-card" data-index="1"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/square3mm.mp4"> </video> <span class="video-carousel-label">Square Peg Insertion</span> </div> <div class="video-carousel-card" data-index="2"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/pentagon3mm.mp4"> </video> <span class="video-carousel-label">Pentagon Peg Insertion</span> </div> <div class="video-carousel-card" data-index="3"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/hdmi.mp4"> </video> <span class="video-carousel-label">HDMI Cable Plug</span> </div> <div class="video-carousel-card" data-index="4"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/usb.mp4"> </video> <span class="video-carousel-label">USB Cable Plug</span> </div> <div class="video-carousel-card" data-index="5"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/drawer.mp4"> </video> <span class="video-carousel-label">Open Drawer</span> </div> </div> <button class="video-carousel-arrow next" aria-label="Next video" type="button">›</button> </div> <div class="video-carousel-dots"> <button class="video-carousel-dot active" data-index="0" aria-label="Go to slide 1" type="button"></button> <button class="video-carousel-dot" data-index="1" aria-label="Go to slide 2" type="button"></button> <button class="video-carousel-dot" data-index="2" aria-label="Go to slide 3" type="button"></button> <button class="video-carousel-dot" data-index="3" aria-label="Go to slide 4" type="button"></button> <button class="video-carousel-dot" data-index="4" aria-label="Go to slide 5" type="button"></button> <button class="video-carousel-dot" data-index="5" aria-label="Go to slide 6" type="button"></button> </div> </div> <style>.video-carousel{position:relative;width:100%;max-width:1000px;margin:1.5rem auto}.video-carousel-viewport{position:relative;display:flex;align-items:center}.video-carousel-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% -(var(--cards-visible) - 1) * 14px) / var(--cards-visible));flex:1 1 auto;min-width:0;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 10px;scrollbar-width:none;-ms-overflow-style:none}.video-carousel-track::-webkit-scrollbar{display:none}.video-carousel-card{position:relative;width:100%;min-width:0;aspect-ratio:1 / 1;border-radius:14px;overflow:hidden;background:#000;scroll-snap-align:center}.video-carousel-card video{width:100%;height:100%;object-fit:cover;display:block}.video-carousel-label{position:absolute;left:8px;right:8px;bottom:14px;background:#ece4fb;color:#5a5a5a;font-weight:400;font-size:.85rem;padding:5px 14px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,0.15);pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}.video-carousel-arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,0.9);color:#333;font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:2;transition:background .2s ease}.video-carousel-arrow:hover{background:#fff}.video-carousel-arrow.prev{margin-right:8px}.video-carousel-arrow.next{margin-left:8px}.video-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}.video-carousel-dot{width:8px;height:8px;border-radius:50%;border:0;background:#ccc;cursor:pointer;padding:0;transition:background .2s ease,transform .2s ease}.video-carousel-dot.active{background:#6b4fbb;transform:scale(1.25)}@media(max-width:640px){.video-carousel{--cards-visible:1.3!important}}</style> <script>
+</script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <div class="navbar-brand social"> <a href="mailto:%63%68%61%72%6C%6F%74%74%65.%6D%6F%72%69%73%73%65%74%74%65@%6D%61%69%6C.%6D%63%67%69%6C%6C.%63%61" title="email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/charliem7" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/charlotte-morissette" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <a href="https://scholar.google.com/citations?user=TwF7zuoAAAAJ" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> </div> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/"> <i class="ti ti-home" style="margin-right: 0.25rem;"></i> Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/"><i class="ti ti-binoculars" style="margin-right: 0.25rem;"></i> Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/"><i class="ti ti-folder" style="margin-right: 0.25rem;"></i> Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "><a class="nav-link" href="/assets/pdf/Charlotte_CV.pdf" target="_blank" rel="noopener noreferrer"> <i class="ti ti-file-text" style="margin-right: 0.25rem;"></i> CV </a></li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post project-detail"> <header class="post-header project-header"> <h1 class="post-title project-title">Tactile Modality Fusion for Vision-Language-Action (VLA) Models</h1> <div class="project-authors"> <a href="https://charliem7.github.io/" target="_blank"><strong>Charlotte Morissette</strong></a><sup>1,2</sup>, <a href="https://aminabyaneh.github.io/" target="_blank" rel="external nofollow noopener">Amin Abyaneh</a><sup>1,2</sup>, <a href="https://weidi-chang.github.io/" target="_blank" rel="external nofollow noopener">Wei-Di Chang</a><sup>1,2</sup>, <a href="https://anashoussaini.github.io/" target="_blank" rel="external nofollow noopener">Anas Houssaini</a><sup>1,2</sup>, <a href="https://cim.mcgill.ca/~dmeger/" target="_blank" rel="external nofollow noopener">David Meger</a><sup>1,2</sup>, <a href="https://sites.google.com/site/hsiuchinlin/" target="_blank" rel="external nofollow noopener">Hsiu-Chin Lin</a><sup>1,2</sup>, <a href="https://research.nvidia.com/person/jonathan-tremblay" target="_blank" rel="external nofollow noopener">Jonathan Tremblay</a><sup>3</sup>, <a href="https://cim.mcgill.ca/~dudek/" target="_blank" rel="external nofollow noopener">Gregory Dudek</a><sup>1,2</sup> </div> <p class="project-affiliation"><sup>1</sup> McGill University   ·   <sup>2</sup> Mila — Quebec AI Institute   ·   <sup>3</sup> NVIDIA </p> </header> <article class="project-content"> <div class="project-metadata"> <div class="metadata-header-row"> <div class="metadata-left-section"> <div class="project-links-metadata"> <a href="https://arxiv.org/abs/2603.14604" class="project-link-btn-metadata" target="_blank" rel="external nofollow noopener"> <i class="fa-solid fa-file-pdf"></i> Paper </a> <span class="project-link-btn-metadata soon-btn"> <i class="fa-brands fa-github"></i> Code (soon) </span> <span class="project-link-btn-metadata soon-btn"> <i class="fa-solid fa-database"></i> Data (soon) </span> </div> <div class="project-venues"> <a href="https://eccv.ecva.net/" class="venue-badge" target="_blank" rel="external nofollow noopener"> <i class="fa-solid fa-award"></i> Accepted to ECCV 2026 </a> </div> <div class="metadata-item keywords-item"> <i class="fa-solid fa-tag" style="color: var(--global-theme-color);"></i> <span>Keywords:</span> <div class="keywords-tags"> <span class="keyword-tag">Vision-Language-Action (VLA) Models</span> <span class="keyword-tag">Tactile Sensing</span> <span class="keyword-tag">Multimodal Fusion</span> <span class="keyword-tag">Robot Learning</span> </div> </div> </div> </div> </div> <div class="project-body"> <figure> <video src="/assets/video/supplementary_final.mp4" class="img-fluid rounded" width="auto" height="auto" autoplay="" controls="" loop="" muted=""></video> </figure> <h2 class="text-center">Summary</h2> <div class="row justify-content-center"> <div class="col-md-10"> <p>While advances in vision-language-action models (VLAs) have introduced robot policies that are both generalizable and semantically grounded, these models mainly rely on vision-based perception. Vision alone, however, cannot capture the complex interaction dynamics that occur during contact-rich manipulation, including contact forces, surface friction, compliance, and shear. Recent attempts to integrate tactile signals into VLA models often increase complexity through token concatenation or large-scale pretraining, yet the heavy computational demands of behaviour models necessitate lightweight fusion strategies. <br> <br> We propose <strong>TacFiLM</strong> to address these challenges, a lightweight modality-fusion approach that integrates visual-tactile signals into vision-language-action (VLA) models. Our approach outlines a post-training finetuning approach that conditions intermediate visual features on pretrained tactile representations using featurewise linear modulation (FiLM). <br> <br> Experimental results on insertion and drawer opening tasks demonstrate consistent improvements in success rate, direct task performance, completion time, and force stability across both in-distribution and out-of-distribution tasks. Together, these results support our method as an effective approach to integrating tactile signals into VLA models, improving contact-rich manipulation behaviours.</p> </div> </div> <div class="tldr-box"> <h2 id="tldr"><strong>TLDR</strong></h2> <p><strong>Our main contributions are summarized as follows:</strong></p> <ul> <li>TacFiLM, a novel lightweight modality fusion approach that integrates tactile signals through image conditioning.</li> <li>Comprehensive experiments showing that TacFiLM improves success rates by up to 50% with shorter episodes and reduced contact forces compared to concatenation and cross-attention-based fusion</li> <li>An investigation of the use of pretrained tactile encoders such as <a href="https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/" rel="external nofollow noopener" target="_blank">Sparsh</a> and <a href="https://arxiv.org/abs/2406.13640" rel="external nofollow noopener" target="_blank">T3</a> in fusing tactile signals into VLA models.</li> </ul> </div> <style>.tldr-box{background:#f5f5f5;border-radius:10px;padding:1.5rem 2rem;margin:1rem 0 1.5rem;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.tldr-box>*{max-width:900px;margin-left:auto;margin-right:auto}.tldr-box>p{margin-top:0!important;margin-bottom:.5rem!important;margin-left:auto!important;margin-right:auto!important}.tldr-box>ul{margin-top:0!important;margin-bottom:0!important;margin-left:auto!important;margin-right:auto!important;padding-top:0!important}</style> <figure> <picture> <img src="/assets/img/tacfilm_overview.png" class="img-fluid rounded" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> <figcaption class="caption">Vision tells the policy where things are; touch tells it what is actually happening at the contact. TacFiLM adds the tactile channel to a pretrained VLA so the model can reason about contact it cannot see.</figcaption> </figure> <h2 id="tacfilm-conditioning-vision-on-touch">TacFiLM: conditioning vision on touch</h2> <p>TacFiLM integrates touch through <a href="https://arxiv.org/abs/1709.07871" rel="external nofollow noopener" target="_blank">feature-wise linear modulation (FiLM)</a>. A tactile encoder reads the contact image and predicts per-channel <strong>scale</strong> (gamma) and <strong>shift</strong> (beta) values; each visual feature is then scaled and offset accordingly. In effect, touch is allowed to reweight and bias what vision sees, amplifying what matters at contact and damping the rest, all without lengthening the sequence the transformer processes. Because we condition rather than re-architect, the <a href="https://openvla-oft.github.io/" rel="external nofollow noopener" target="_blank">OpenVLA-OFT</a> backbone stays intact, latency barely moves, and adaptation is fast and data-efficient. We also reuse <strong>pretrained tactile encoders</strong> such as <a href="https://arxiv.org/abs/2406.13640" rel="external nofollow noopener" target="_blank">T3</a> and <a href="https://ai.meta.com/research/publications/sparsh-self-supervised-touch-representations-for-vision-based-tactile-sensing/" rel="external nofollow noopener" target="_blank">Sparsh</a>, so TacFiLM benefits from tactile pretraining the same way the VLA already benefits from vision-language pretraining.</p> <figure> <picture> <img src="/assets/img/tacfilm_method.png" class="img-fluid rounded" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> <figcaption class="caption">The TacFiLM architecture. A pretrained tactile encoder maps the contact image to FiLM parameters that modulate the visual features inside the VLA backbone, leaving the vision-language pathway and the action decoder otherwise untouched.</figcaption> </figure> <h2 id="tasks">Tasks</h2> <div class="video-carousel" id="000000000" style="--cards-visible: 3;"> <div class="video-carousel-viewport"> <button class="video-carousel-arrow prev" aria-label="Previous video" type="button"> ‹ </button> <div class="video-carousel-track"> <div class="video-carousel-card" data-index="0"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/circle3mm.mp4"></video> <span class="video-carousel-label"> Circle Peg Insertion </span> </div> <div class="video-carousel-card" data-index="1"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/square3mm.mp4"></video> <span class="video-carousel-label"> Square Peg Insertion </span> </div> <div class="video-carousel-card" data-index="2"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/pentagon3mm.mp4"></video> <span class="video-carousel-label"> Pentagon Peg Insertion </span> </div> <div class="video-carousel-card" data-index="3"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/hdmi.mp4"></video> <span class="video-carousel-label"> HDMI Cable Plug </span> </div> <div class="video-carousel-card" data-index="4"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/usb.mp4"></video> <span class="video-carousel-label"> USB Cable Plug </span> </div> <div class="video-carousel-card" data-index="5"> <video muted="" loop="" playsinline="" preload="metadata" src="/assets/video/drawer.mp4"></video> <span class="video-carousel-label"> Open Drawer </span> </div> </div> <button class="video-carousel-arrow next" aria-label="Next video" type="button"> › </button> </div> <div class="video-carousel-dots"> <button class="video-carousel-dot active" data-index="0" aria-label="Go to slide 1" type="button"></button> <button class="video-carousel-dot" data-index="1" aria-label="Go to slide 2" type="button"></button> <button class="video-carousel-dot" data-index="2" aria-label="Go to slide 3" type="button"></button> <button class="video-carousel-dot" data-index="3" aria-label="Go to slide 4" type="button"></button> <button class="video-carousel-dot" data-index="4" aria-label="Go to slide 5" type="button"></button> <button class="video-carousel-dot" data-index="5" aria-label="Go to slide 6" type="button"></button> </div> </div> <style>.video-carousel{position:relative;width:100%;max-width:1000px;margin:1.5rem auto}.video-carousel-viewport{position:relative;display:flex;align-items:center}.video-carousel-track{display:flex;flex:1 1 auto;min-width:0;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 10px;scrollbar-width:none;-ms-overflow-style:none}.video-carousel-track::-webkit-scrollbar{display:none}.video-carousel-card{position:relative;flex:0 0 auto;min-width:0;aspect-ratio:1 / 1;border-radius:14px;overflow:hidden;background:#000;scroll-snap-align:center}.video-carousel-card video{width:100%;height:100%;object-fit:cover;display:block}.video-carousel-label{position:absolute;left:8px;right:8px;bottom:14px;background:#ece4fb;color:#5a5a5a;font-weight:400;font-size:.85rem;padding:5px 14px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,0.15);pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}.video-carousel-arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,0.9);color:#333;font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:2;transition:background .2s ease}.video-carousel-arrow:hover{background:#fff}.video-carousel-arrow.prev{margin-right:8px}.video-carousel-arrow.next{margin-left:8px}.video-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}.video-carousel-dot{width:8px;height:8px;border-radius:50%;border:0;background:#ccc;cursor:pointer;padding:0;transition:background .2s ease,transform .2s ease}.video-carousel-dot.active{background:#6b4fbb;transform:scale(1.25)}@media(max-width:640px){.video-carousel{--cards-visible:1.3!important}}</style> <script>
+
   (function () {
+
     var root = document.getElementById('000000000');
+
     if (!root) return;
 
-    var track = root.querySelector('.video-carousel-track');
-    var cards = Array.prototype.slice.call(
-      root.querySelectorAll('.video-carousel-card')
-    );
-    var dots = Array.prototype.slice.call(
-      root.querySelectorAll('.video-carousel-dot')
-    );
-    var prevBtn = root.querySelector('.video-carousel-arrow.prev');
-    var nextBtn = root.querySelector('.video-carousel-arrow.next');
 
-    function cardStep() {
-      if (cards.length < 2) return track.clientWidth;
-      return cards[1].offsetLeft - cards[0].offsetLeft;
+    /* =======================================================
+       ELEMENTS
+       ======================================================= */
+
+    var track = root.querySelector(
+      '.video-carousel-track'
+    );
+
+    var cards = Array.prototype.slice.call(
+      root.querySelectorAll(
+        '.video-carousel-card'
+      )
+    );
+
+    var dots = Array.prototype.slice.call(
+      root.querySelectorAll(
+        '.video-carousel-dot'
+      )
+    );
+
+    var prevBtn = root.querySelector(
+      '.video-carousel-arrow.prev'
+    );
+
+    var nextBtn = root.querySelector(
+      '.video-carousel-arrow.next'
+    );
+
+
+    /* =======================================================
+       CARD WIDTH
+
+       Calculate the card width using the actual rendered
+       width of the carousel track.
+
+       Example:
+
+         track = 736px
+         cards visible = 3
+         gap = 14px
+
+         (736 - 28) / 3
+         = 236px
+
+       This avoids percentage-based flex sizing, which was
+       behaving differently on the deployed website.
+       ======================================================= */
+
+    function updateCardWidths() {
+
+      var visible = parseFloat(
+        getComputedStyle(root)
+          .getPropertyValue('--cards-visible')
+      );
+
+      var gap = 14;
+
+      var availableWidth =
+        track.clientWidth;
+
+      var cardWidth =
+        (
+          availableWidth -
+          (visible - 1) * gap
+        ) / visible;
+
+
+      cards.forEach(function (card) {
+
+        card.style.width =
+          cardWidth + 'px';
+
+      });
+
     }
 
-    prevBtn.addEventListener('click', function () {
-      track.scrollBy({
-        left: -cardStep(),
-        behavior: 'smooth'
-      });
-    });
 
-    nextBtn.addEventListener('click', function () {
-      track.scrollBy({
-        left: cardStep(),
-        behavior: 'smooth'
-      });
-    });
+    /* =======================================================
+       INITIAL CARD WIDTH
+       ======================================================= */
 
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        track.scrollTo({
-          left: cards[i].offsetLeft - track.offsetLeft,
-          behavior: 'smooth'
-        });
-      });
-    });
+    updateCardWidths();
 
-    // Play only videos currently in view; pause the rest.
-    // Update active dot based on whichever card is closest
-    // to the viewport center.
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          var video = entry.target.querySelector('video');
 
-          if (!video) return;
+    /* =======================================================
+       UPDATE WIDTH WHEN WINDOW RESIZES
+       ======================================================= */
 
-          if (entry.isIntersecting) {
-            video.play().catch(function () {});
-          } else {
-            video.pause();
-          }
-        });
+    window.addEventListener(
+      'resize',
+      function () {
 
-        updateActiveDot();
-      },
-      {
-        root: track,
-        threshold: 0.6
+        updateCardWidths();
+
       }
     );
 
-    cards.forEach(function (card) {
-      observer.observe(card);
-    });
 
-    function updateActiveDot() {
-      var trackRect = track.getBoundingClientRect();
+    /* =======================================================
+       CARD STEP
 
-      var trackCenter =
-        trackRect.left + trackRect.width / 2;
+       Determines how far the carousel moves when an arrow
+       is clicked.
+       ======================================================= */
 
-      var closestIndex = 0;
-      var closestDist = Infinity;
+    function cardStep() {
 
-      cards.forEach(function (card, i) {
-        var rect = card.getBoundingClientRect();
+      if (cards.length < 2) {
+        return track.clientWidth;
+      }
 
-        var cardCenter =
-          rect.left + rect.width / 2;
+      return (
+        cards[1].offsetLeft -
+        cards[0].offsetLeft
+      );
 
-        var dist =
-          Math.abs(cardCenter - trackCenter);
-
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestIndex = i;
-        }
-      });
-
-      dots.forEach(function (d, i) {
-        d.classList.toggle(
-          'active',
-          i === closestIndex
-        );
-      });
     }
 
-    track.addEventListener('scroll', function () {
-      window.requestAnimationFrame(updateActiveDot);
+
+    /* =======================================================
+       PREVIOUS BUTTON
+       ======================================================= */
+
+    prevBtn.addEventListener(
+      'click',
+      function () {
+
+        track.scrollBy({
+          left: -cardStep(),
+          behavior: 'smooth'
+        });
+
+      }
+    );
+
+
+    /* =======================================================
+       NEXT BUTTON
+       ======================================================= */
+
+    nextBtn.addEventListener(
+      'click',
+      function () {
+
+        track.scrollBy({
+          left: cardStep(),
+          behavior: 'smooth'
+        });
+
+      }
+    );
+
+
+    /* =======================================================
+       DOT NAVIGATION
+       ======================================================= */
+
+    dots.forEach(function (dot, i) {
+
+      dot.addEventListener(
+        'click',
+        function () {
+
+          track.scrollTo({
+            left:
+              cards[i].offsetLeft -
+              track.offsetLeft,
+
+            behavior: 'smooth'
+          });
+
+        }
+      );
+
     });
+
+
+    /* =======================================================
+       VIDEO PLAYBACK
+
+       Only videos that are sufficiently visible are played.
+       Videos outside the visible area are paused.
+       ======================================================= */
+
+    var observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              var video =
+                entry.target.querySelector(
+                  'video'
+                );
+
+              if (!video) return;
+
+
+              if (entry.isIntersecting) {
+
+                video.play().catch(
+                  function () {}
+                );
+
+              } else {
+
+                video.pause();
+
+              }
+
+            }
+          );
+
+
+          updateActiveDot();
+
+        },
+        {
+          root: track,
+          threshold: 0.6
+        }
+      );
+
+
+    /* =======================================================
+       OBSERVE CARDS
+       ======================================================= */
+
+    cards.forEach(function (card) {
+
+      observer.observe(card);
+
+    });
+
+
+    /* =======================================================
+       ACTIVE DOT
+
+       Determine which card is closest to the center of the
+       visible carousel.
+       ======================================================= */
+
+    function updateActiveDot() {
+
+      var trackRect =
+        track.getBoundingClientRect();
+
+      var trackCenter =
+        trackRect.left +
+        trackRect.width / 2;
+
+
+      var closestIndex = 0;
+
+      var closestDist = Infinity;
+
+
+      cards.forEach(
+        function (card, i) {
+
+          var rect =
+            card.getBoundingClientRect();
+
+          var cardCenter =
+            rect.left +
+            rect.width / 2;
+
+          var dist =
+            Math.abs(
+              cardCenter -
+              trackCenter
+            );
+
+
+          if (dist < closestDist) {
+
+            closestDist = dist;
+            closestIndex = i;
+
+          }
+
+        }
+      );
+
+
+      dots.forEach(
+        function (dot, i) {
+
+          dot.classList.toggle(
+            'active',
+            i === closestIndex
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =======================================================
+       UPDATE DOT WHILE SCROLLING
+       ======================================================= */
+
+    track.addEventListener(
+      'scroll',
+      function () {
+
+        window.requestAnimationFrame(
+          updateActiveDot
+        );
+
+      }
+    );
+
+
+    /* =======================================================
+       INITIAL ACTIVE DOT
+       ======================================================= */
+
+    updateActiveDot();
+
+
   })();
+
 </script> <h2 id="results">Results</h2> <p>We test TacFiLM on contact-rich <strong>insertion</strong> with a <a href="https://franka.de/" rel="external nofollow noopener" target="_blank">Franka Panda</a> arm and a <a href="https://digit.ml/" rel="external nofollow noopener" target="_blank">DIGIT</a> sensor, the regime where vision-only policies struggle most. Conditioning on touch lifts both <strong>success rate</strong> and <strong>force stability</strong>, with the largest gains on <strong>tight-tolerance</strong> insertions where feedback carries the most information, and it does so without the cost of token-level fusion. Encouragingly, pretrained tactile encoders transfer cleanly, hinting that touch foundation models can become a reusable building block for VLAs.</p> <figure> <picture> <img src="/assets/img/main_results.png" class="img-fluid rounded" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> <figcaption class="caption">Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions.</figcaption> </figure> <details class="results-table" id="000000000"> <summary> In-distribution results (avg. across 4 tasks)</summary> <div class="results-table-scroll"> <table> <thead> <tr> <th>Method</th> <th>Success (%)</th> <th>Direct (%)</th> <th>Max Force (N)</th> <th>Time (s)</th> </tr> </thead> <tbody> <tr> <td>OpenVLA-OFT </td> <td>58.0 </td> <td>12.38 </td> <td>14.94 ± 9.16 </td> <td>126.7 ± 51.34 </td> </tr> <tr> <td>TactileConcat </td> <td>64.76 </td> <td>10.48 </td> <td>10.27 ± 4.12 </td> <td>113.04 ± 52.31 </td> </tr> <tr> <td>Cross-Attn </td> <td>48.00 </td> <td>12.00 </td> <td>13.43 ± 12.62 </td> <td>149.92 ± 39.01 </td> </tr> <tr class="best-row"> <td>TacFiLM (ours) </td> <td> <strong>86.67</strong> </td> <td> <strong>37.14</strong> </td> <td> <strong>8.65</strong> ± 3.80 </td> <td> <strong>81.72</strong> ± 38.00 </td> </tr> </tbody> </table> </div> </details> <style>.results-table{max-width:900px;margin:1.5rem auto;border:1px solid #e2e2e2;border-radius:10px;padding:.75rem 1rem}.results-table summary{cursor:pointer;font-weight:600;color:#790b74;padding:.25rem 0;list-style:none}.results-table summary::-webkit-details-marker{display:none}.results-table summary::before{content:"▸ ";display:inline-block;transition:transform .2s ease}.results-table[open] summary::before{transform:rotate(90deg)}.results-table-scroll{overflow-x:auto;margin-top:.75rem}.results-table table{width:100%;border-collapse:collapse;font-size:.92rem}.results-table th,.results-table td{padding:8px 12px;text-align:left;white-space:nowrap}.results-table th{color:#5a5a5a;font-weight:600;border-bottom:2px solid #e2e2e2}.results-table td{color:#5a5a5a;border-bottom:1px solid #f0f0f0}.results-table td strong{color:#2b2b2b;font-weight:600}.results-table td .best{background:#ece4fb;color:#6b4fbb;font-weight:600;padding:3px 8px;border-radius:6px}.results-table tr.best-row{background:#f7f3fd}.results-table tr.best-row td{color:#4a3a70}</style> <details class="results-table" id="000000000"> <summary> Out-of-distribution results (avg. across 5 tasks)</summary> <div class="results-table-scroll"> <table> <thead> <tr> <th>Method</th> <th>Success (%)</th> <th>Direct (%)</th> <th>Max Force (N)</th> <th>Time (s)</th> </tr> </thead> <tbody> <tr> <td>OpenVLA-OFT </td> <td>58.0 </td> <td>12.38 </td> <td>14.94 ± 9.16 </td> <td>126.7 ± 51.34 </td> </tr> <tr> <td>TactileConcat </td> <td>64.76 </td> <td>10.48 </td> <td>10.27 ± 4.12 </td> <td>113.04 ± 52.31 </td> </tr> <tr> <td>Cross-Attn </td> <td>48.00 </td> <td>12.00 </td> <td>13.43 ± 12.62 </td> <td>149.92 ± 39.01 </td> </tr> <tr class="best-row"> <td>TacFiLM (ours) </td> <td> <strong>86.67</strong> </td> <td> <strong>37.14</strong> </td> <td> <strong>8.65</strong> ± 3.80 </td> <td> <strong>81.72</strong> ± 38.00 </td> </tr> </tbody> </table> </div> </details> <style>.results-table{max-width:900px;margin:1.5rem auto;border:1px solid #e2e2e2;border-radius:10px;padding:.75rem 1rem}.results-table summary{cursor:pointer;font-weight:600;color:#790b74;padding:.25rem 0;list-style:none}.results-table summary::-webkit-details-marker{display:none}.results-table summary::before{content:"▸ ";display:inline-block;transition:transform .2s ease}.results-table[open] summary::before{transform:rotate(90deg)}.results-table-scroll{overflow-x:auto;margin-top:.75rem}.results-table table{width:100%;border-collapse:collapse;font-size:.92rem}.results-table th,.results-table td{padding:8px 12px;text-align:left;white-space:nowrap}.results-table th{color:#5a5a5a;font-weight:600;border-bottom:2px solid #e2e2e2}.results-table td{color:#5a5a5a;border-bottom:1px solid #f0f0f0}.results-table td strong{color:#2b2b2b;font-weight:600}.results-table td .best{background:#ece4fb;color:#6b4fbb;font-weight:600;padding:3px 8px;border-radius:6px}.results-table tr.best-row{background:#f7f3fd}.results-table tr.best-row td{color:#4a3a70}</style> <p><em>Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.</em></p> <h2 id="citation">Citation</h2> <div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">morissette2026tactile</span><span class="p">,</span>
   <span class="na">title</span>   <span class="p">=</span> <span class="s">{Tactile Modality Fusion for Vision-Language-Action Models}</span><span class="p">,</span>
   <span class="na">author</span>  <span class="p">=</span> <span class="s">{Morissette, Charlotte and Abyaneh, Amin and Chang, Wei-Di and
