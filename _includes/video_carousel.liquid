@@ -95,13 +95,15 @@
   }
 
   .video-carousel-card {
-    position: relative;
-    flex: 0 0 calc((100% - (var(--cards-visible) - 1) * 14px) / var(--cards-visible));
-    aspect-ratio: 1 / 1;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #000;
-    scroll-snap-align: center;
+  position: relative;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: calc((100% - (var(--cards-visible) - 1) * 14px) / var(--cards-visible)) !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  scroll-snap-align: center;
   }
 
   .video-carousel-card video {
