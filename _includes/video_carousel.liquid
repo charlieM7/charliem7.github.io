@@ -3,9 +3,9 @@
   ----------------------
   A multi-up, swipeable video carousel: several square video cards visible
   at once in a horizontally-scrolling, snap-aligned row, with arrows and
-  dot pagination — styled like a "Real-World Rollouts" gallery.
+  dot pagination.
 
-  USAGE (in a project .md page, e.g. _projects/your-project.md):
+  USAGE (in a project .md page):
 
     {% include video_carousel.liquid videos=page.rollout_videos %}
 
@@ -19,50 +19,93 @@
       - src: assets/video/rollout_slide.mp4
         label: Slide
 
-  Each video autoplays (muted), loops, and plays inline. Only videos
-  currently in view play; others stay paused to save resources.
-
-  Optional param: cards_visible (default 3) — how many square cards are
-  visible on desktop at once, e.g.:
+  Optional parameter:
 
     {% include video_carousel.liquid videos=page.rollout_videos cards_visible=4 %}
+
+  Default: 3 cards visible on desktop.
 {% endcomment %}
 
 {% assign uid = "vc-" | append: site.time | date: "%N" %}
 {% assign cards_visible = include.cards_visible | default: 3 %}
 
-<div class="video-carousel" id="{{ uid }}" style="--cards-visible: {{ cards_visible }};">
+<div
+  class="video-carousel"
+  id="{{ uid }}"
+  style="--cards-visible: {{ cards_visible }};"
+>
   <div class="video-carousel-viewport">
-    <button class="video-carousel-arrow prev" aria-label="Previous video" type="button">&#8249;</button>
+
+    <button
+      class="video-carousel-arrow prev"
+      aria-label="Previous video"
+      type="button"
+    >
+      &#8249;
+    </button>
 
     <div class="video-carousel-track">
+
       {% for item in include.videos %}
-        <div class="video-carousel-card" data-index="{{ forloop.index0 }}">
+
+        <div
+          class="video-carousel-card"
+          data-index="{{ forloop.index0 }}"
+        >
+
           <video
             muted
             loop
             playsinline
             preload="metadata"
-            src="{{ item.src | relative_url }}">
-          </video>
+            src="{{ item.src | relative_url }}"
+          ></video>
+
           {% if item.label %}
-            <span class="video-carousel-label">{{ item.label }}</span>
+            <span class="video-carousel-label">
+              {{ item.label }}
+            </span>
           {% endif %}
+
         </div>
+
       {% endfor %}
+
     </div>
 
-    <button class="video-carousel-arrow next" aria-label="Next video" type="button">&#8250;</button>
+    <button
+      class="video-carousel-arrow next"
+      aria-label="Next video"
+      type="button"
+    >
+      &#8250;
+    </button>
+
   </div>
 
   <div class="video-carousel-dots">
+
     {% for item in include.videos %}
-      <button class="video-carousel-dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}" type="button"></button>
+
+      <button
+        class="video-carousel-dot{% if forloop.first %} active{% endif %}"
+        data-index="{{ forloop.index0 }}"
+        aria-label="Go to slide {{ forloop.index }}"
+        type="button"
+      ></button>
+
     {% endfor %}
+
   </div>
 </div>
 
+
 <style>
+
+  /* =========================================================
+     CAROUSEL CONTAINER
+     ========================================================= */
+
   .video-carousel {
     position: relative;
     width: 100%;
@@ -70,29 +113,36 @@
     margin: 1.5rem auto;
   }
 
+
+  /* =========================================================
+     VIEWPORT
+     ========================================================= */
+
   .video-carousel-viewport {
     position: relative;
     display: flex;
     align-items: center;
   }
 
-  /*
-   * The track itself uses grid to give each video a fixed fraction
-   * of the available carousel width.
-   */
-  .video-carousel-track {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc(
-      (100% - (var(--cards-visible) - 1) * 14px)
-      / var(--cards-visible)
-    );
 
+  /* =========================================================
+     VIDEO TRACK
+     
+     Important:
+     We intentionally do NOT calculate card widths here.
+     JavaScript calculates them from the actual rendered width
+     of the track. This avoids conflicts with site-wide CSS.
+     ========================================================= */
+
+  .video-carousel-track {
+    display: flex;
     flex: 1 1 auto;
     min-width: 0;
+
     gap: 14px;
 
     overflow-x: auto;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 
@@ -106,28 +156,55 @@
     display: none;
   }
 
+
+  /* =========================================================
+     VIDEO CARD
+     ========================================================= */
+
   .video-carousel-card {
     position: relative;
-    width: 100%;
+
+    /*
+     * Width is intentionally NOT specified here.
+     * JavaScript sets the width explicitly based on the
+     * actual rendered track width.
+     */
+    flex: 0 0 auto;
+
     min-width: 0;
+
     aspect-ratio: 1 / 1;
 
     border-radius: 14px;
     overflow: hidden;
+
     background: #000;
 
     scroll-snap-align: center;
   }
 
+
+  /* =========================================================
+     VIDEO
+     ========================================================= */
+
   .video-carousel-card video {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
   }
 
+
+  /* =========================================================
+     LABEL
+     ========================================================= */
+
   .video-carousel-label {
     position: absolute;
+
     left: 8px;
     right: 8px;
     bottom: 14px;
@@ -139,6 +216,7 @@
     font-size: 0.85rem;
 
     padding: 5px 14px;
+
     border-radius: 999px;
 
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -148,8 +226,14 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
     text-align: center;
   }
+
+
+  /* =========================================================
+     ARROWS
+     ========================================================= */
 
   .video-carousel-arrow {
     flex: 0 0 auto;
@@ -191,10 +275,18 @@
     margin-left: 8px;
   }
 
+
+  /* =========================================================
+     DOTS
+     ========================================================= */
+
   .video-carousel-dots {
     display: flex;
+
     justify-content: center;
+
     gap: 8px;
+
     margin-top: 8px;
   }
 
@@ -208,6 +300,7 @@
     background: #ccc;
 
     cursor: pointer;
+
     padding: 0;
 
     transition:
@@ -217,122 +310,358 @@
 
   .video-carousel-dot.active {
     background: #6b4fbb;
+
     transform: scale(1.25);
   }
 
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
   @media (max-width: 640px) {
+
     .video-carousel {
       --cards-visible: 1.3 !important;
     }
+
   }
+
 </style>
 
+
 <script>
+
   (function () {
+
     var root = document.getElementById('{{ uid }}');
+
     if (!root) return;
 
-    var track = root.querySelector('.video-carousel-track');
-    var cards = Array.prototype.slice.call(
-      root.querySelectorAll('.video-carousel-card')
-    );
-    var dots = Array.prototype.slice.call(
-      root.querySelectorAll('.video-carousel-dot')
-    );
-    var prevBtn = root.querySelector('.video-carousel-arrow.prev');
-    var nextBtn = root.querySelector('.video-carousel-arrow.next');
 
-    function cardStep() {
-      if (cards.length < 2) return track.clientWidth;
-      return cards[1].offsetLeft - cards[0].offsetLeft;
+    /* =======================================================
+       ELEMENTS
+       ======================================================= */
+
+    var track = root.querySelector(
+      '.video-carousel-track'
+    );
+
+    var cards = Array.prototype.slice.call(
+      root.querySelectorAll(
+        '.video-carousel-card'
+      )
+    );
+
+    var dots = Array.prototype.slice.call(
+      root.querySelectorAll(
+        '.video-carousel-dot'
+      )
+    );
+
+    var prevBtn = root.querySelector(
+      '.video-carousel-arrow.prev'
+    );
+
+    var nextBtn = root.querySelector(
+      '.video-carousel-arrow.next'
+    );
+
+
+    /* =======================================================
+       CARD WIDTH
+
+       Calculate the card width using the actual rendered
+       width of the carousel track.
+
+       Example:
+
+         track = 736px
+         cards visible = 3
+         gap = 14px
+
+         (736 - 28) / 3
+         = 236px
+
+       This avoids percentage-based flex sizing, which was
+       behaving differently on the deployed website.
+       ======================================================= */
+
+    function updateCardWidths() {
+
+      var visible = parseFloat(
+        getComputedStyle(root)
+          .getPropertyValue('--cards-visible')
+      );
+
+      var gap = 14;
+
+      var availableWidth =
+        track.clientWidth;
+
+      var cardWidth =
+        (
+          availableWidth -
+          (visible - 1) * gap
+        ) / visible;
+
+
+      cards.forEach(function (card) {
+
+        card.style.width =
+          cardWidth + 'px';
+
+      });
+
     }
 
-    prevBtn.addEventListener('click', function () {
-      track.scrollBy({
-        left: -cardStep(),
-        behavior: 'smooth'
-      });
-    });
 
-    nextBtn.addEventListener('click', function () {
-      track.scrollBy({
-        left: cardStep(),
-        behavior: 'smooth'
-      });
-    });
+    /* =======================================================
+       INITIAL CARD WIDTH
+       ======================================================= */
 
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        track.scrollTo({
-          left: cards[i].offsetLeft - track.offsetLeft,
-          behavior: 'smooth'
-        });
-      });
-    });
+    updateCardWidths();
 
-    // Play only videos currently in view; pause the rest.
-    // Update active dot based on whichever card is closest
-    // to the viewport center.
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          var video = entry.target.querySelector('video');
 
-          if (!video) return;
+    /* =======================================================
+       UPDATE WIDTH WHEN WINDOW RESIZES
+       ======================================================= */
 
-          if (entry.isIntersecting) {
-            video.play().catch(function () {});
-          } else {
-            video.pause();
-          }
-        });
+    window.addEventListener(
+      'resize',
+      function () {
 
-        updateActiveDot();
-      },
-      {
-        root: track,
-        threshold: 0.6
+        updateCardWidths();
+
       }
     );
 
-    cards.forEach(function (card) {
-      observer.observe(card);
-    });
 
-    function updateActiveDot() {
-      var trackRect = track.getBoundingClientRect();
+    /* =======================================================
+       CARD STEP
 
-      var trackCenter =
-        trackRect.left + trackRect.width / 2;
+       Determines how far the carousel moves when an arrow
+       is clicked.
+       ======================================================= */
 
-      var closestIndex = 0;
-      var closestDist = Infinity;
+    function cardStep() {
 
-      cards.forEach(function (card, i) {
-        var rect = card.getBoundingClientRect();
+      if (cards.length < 2) {
+        return track.clientWidth;
+      }
 
-        var cardCenter =
-          rect.left + rect.width / 2;
+      return (
+        cards[1].offsetLeft -
+        cards[0].offsetLeft
+      );
 
-        var dist =
-          Math.abs(cardCenter - trackCenter);
-
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestIndex = i;
-        }
-      });
-
-      dots.forEach(function (d, i) {
-        d.classList.toggle(
-          'active',
-          i === closestIndex
-        );
-      });
     }
 
-    track.addEventListener('scroll', function () {
-      window.requestAnimationFrame(updateActiveDot);
+
+    /* =======================================================
+       PREVIOUS BUTTON
+       ======================================================= */
+
+    prevBtn.addEventListener(
+      'click',
+      function () {
+
+        track.scrollBy({
+          left: -cardStep(),
+          behavior: 'smooth'
+        });
+
+      }
+    );
+
+
+    /* =======================================================
+       NEXT BUTTON
+       ======================================================= */
+
+    nextBtn.addEventListener(
+      'click',
+      function () {
+
+        track.scrollBy({
+          left: cardStep(),
+          behavior: 'smooth'
+        });
+
+      }
+    );
+
+
+    /* =======================================================
+       DOT NAVIGATION
+       ======================================================= */
+
+    dots.forEach(function (dot, i) {
+
+      dot.addEventListener(
+        'click',
+        function () {
+
+          track.scrollTo({
+            left:
+              cards[i].offsetLeft -
+              track.offsetLeft,
+
+            behavior: 'smooth'
+          });
+
+        }
+      );
+
     });
+
+
+    /* =======================================================
+       VIDEO PLAYBACK
+
+       Only videos that are sufficiently visible are played.
+       Videos outside the visible area are paused.
+       ======================================================= */
+
+    var observer =
+      new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              var video =
+                entry.target.querySelector(
+                  'video'
+                );
+
+              if (!video) return;
+
+
+              if (entry.isIntersecting) {
+
+                video.play().catch(
+                  function () {}
+                );
+
+              } else {
+
+                video.pause();
+
+              }
+
+            }
+          );
+
+
+          updateActiveDot();
+
+        },
+        {
+          root: track,
+          threshold: 0.6
+        }
+      );
+
+
+    /* =======================================================
+       OBSERVE CARDS
+       ======================================================= */
+
+    cards.forEach(function (card) {
+
+      observer.observe(card);
+
+    });
+
+
+    /* =======================================================
+       ACTIVE DOT
+
+       Determine which card is closest to the center of the
+       visible carousel.
+       ======================================================= */
+
+    function updateActiveDot() {
+
+      var trackRect =
+        track.getBoundingClientRect();
+
+      var trackCenter =
+        trackRect.left +
+        trackRect.width / 2;
+
+
+      var closestIndex = 0;
+
+      var closestDist = Infinity;
+
+
+      cards.forEach(
+        function (card, i) {
+
+          var rect =
+            card.getBoundingClientRect();
+
+          var cardCenter =
+            rect.left +
+            rect.width / 2;
+
+          var dist =
+            Math.abs(
+              cardCenter -
+              trackCenter
+            );
+
+
+          if (dist < closestDist) {
+
+            closestDist = dist;
+            closestIndex = i;
+
+          }
+
+        }
+      );
+
+
+      dots.forEach(
+        function (dot, i) {
+
+          dot.classList.toggle(
+            'active',
+            i === closestIndex
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =======================================================
+       UPDATE DOT WHILE SCROLLING
+       ======================================================= */
+
+    track.addEventListener(
+      'scroll',
+      function () {
+
+        window.requestAnimationFrame(
+          updateActiveDot
+        );
+
+      }
+    );
+
+
+    /* =======================================================
+       INITIAL ACTIVE DOT
+       ======================================================= */
+
+    updateActiveDot();
+
+
   })();
+
 </script>
