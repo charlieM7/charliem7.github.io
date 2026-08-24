@@ -136,7 +136,7 @@ TacFiLM integrates touch through [feature-wise linear modulation (FiLM)](https:/
 
 ## Results
 
-We test TacFiLM on contact-rich **insertion** and **opening** tasks with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch increases both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information. *Please see paper for full results including bot an ablation study and tactile representation analysis.*
+We test TacFiLM on contact-rich **insertion** and **opening** tasks with a [Franka Panda](https://franka.de/) arm and a [DIGIT](https://digit.ml/) sensor, the regime where vision-only policies struggle most. Conditioning on touch increases both **success rate** and **force stability**, with the largest gains on **tight-tolerance** insertions where feedback carries the most information. *Please see paper for full results including both the ablation study and tactile representation analysis.*
 
 {% include figure.liquid loading="lazy" path="assets/img/main_results.png" class="img-fluid rounded" zoomable=true caption=" **Insertions task ID results.** Real-robot insertion experiments with a Franka Panda and a DIGIT tactile sensor. TacFiLM improves success rates and force stability over vision-only baselines, with the biggest improvements on tight-tolerance insertions." %}
 
