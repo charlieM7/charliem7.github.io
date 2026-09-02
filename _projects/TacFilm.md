@@ -150,7 +150,7 @@ We test TacFiLM on contact-rich **insertion** and **opening** tasks with a [Fran
       title=" Out-of-distribution results (avg. across 5 tasks)"
       headers="Method,Success (%),Direct (%),Max Force (N),Time (s)"
       open=false
-      rows=page.id_results %}
+      rows=page.ood_results %}
 
 *Code and data will be released soon, watch this page. More media and qualitative rollouts will be added here as they become available.*
 
