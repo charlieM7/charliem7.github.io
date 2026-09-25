@@ -25,7 +25,7 @@ latest_posts:
 ---
 <!-- 
 # Charlotte Morissette -->
-I am a PhD student in Robotics at the **Univerity of Toronto** - **Vector Institute**, advised by **Professor Jonathan Kelly** following a master's at McGill University under Professor Gregory Dudek. My <span style="border-bottom: 1px solid #790b74; padding-bottom: 1px;">research is primarily in robot learning</span>, more specifically in modality fusion, tactile sensing, foundation models, reinforcement learning, HRI, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
+I am a PhD student in Robotics at the **University of Toronto** - **Vector Institute**, advised by **Professor Jonathan Kelly** following a master's at McGill University under Professor Gregory Dudek. My <span style="border-bottom: 1px solid #790b74; padding-bottom: 1px;">research is primarily in robot learning</span>, more specifically in modality fusion, tactile sensing, foundation models, reinforcement learning, HRI, and computer vision. More recently, my work has focused on efficient modality fusion in VLA models for robotic manipulation, with a particular emphasis on tactile sensing. 
 
 If our interests align, please feel free to reach out — I am always happy to discuss potential research or collaboration opportunities.
 
